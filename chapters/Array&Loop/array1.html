@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+  <title>Array</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+  <h1>Devesh</h1>
+
+  <script>
+    let number = [1, 2, 3, 4, 5, 6, 1, 2];
+    console.log("Original Array: " + number);
+    console.log(number);
+
+    console.log(Array.isArray(number));
+
+    console.log(number.length);
+
+    //Adding elements to array
+    // Push
+    number.push(7, 8, 9);
+    console.log("After pushing elements using push(): " + number);
+
+    // Remove Elements from Array
+    //pop
+    let removedElementUsingPop = number.pop();
+    console.log("Removed element Using pop() : " + removedElementUsingPop);
+    console.log("After removing element Using pop(): " + number);
+
+    //shift
+    let removedElementUsingShift = number.shift();
+    console.log("Removed element Using shift() : " + removedElementUsingShift);
+    console.log("After Removing element Using Shift(): " + number);
+
+    //unshift
+    // number.unshift(-1, -2, -3);
+    console.log("Modified Array after unshifting : " + number);
+
+    //splice
+    number.splice(2, 0, 'a', 'b');
+    console.log("Modified Array After splicing at index 2 : " + number);
+
+    //sorting the array
+    number.sort();
+    console.log("Sorted Number Array : " + number);
+    // // Removing duplicates from an array using Set() method in JavaScript
+    // const uniqueNumber = [...new Set(number)];
+    // console.log(`Unique values of the array are : ${uniqueNumber}`);
+    // console.log(uniqueNumber);
+    // function searchElement(arr, element) {
+    //   if (arr.includes(element)) {
+    //     return `${element} is present at index ${arr.indexOf(element)}`;
+    //   } else {
+    //     return `${element} is not present in the array.`;
+    //   }
+    // };
+    // document.write("<p>" + searchElement(uniqueNumber, 1) + "</p>");
+    // document.write("<p>" + searchElement(uniqueNumber, 7) + "</p>")
+    // document.write("<p>" + searchElement(uniqueNumber, 4) + "</p>")
+
+
+  </script>
+</body>
+
+</html>

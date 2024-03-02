@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advance</title>
+</head>
+
+<body>
+
+  <script>
+    let sum = function (n1, n2) {
+      return n1 + n2;
+    };
+
+    // let newSum = sum;
+
+    // console.log(sum(4, 5));
+    // console.log(newSum(4, 5));
+
+
+    let sumThreeNumbers = function (n1, n2, n3, sumTwoNumbers) {
+      s1 = sumTwoNumbers(n1, n2);
+      return s1 + n3;
+    };
+
+    console.log(sumThreeNumbers(1, 5, 3, sum));
+
+  </script>
+</body>
+
+</html>

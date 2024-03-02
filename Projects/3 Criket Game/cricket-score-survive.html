@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Cricket Game</title>
+  <link rel="stylesheet" href="../../chapters/styles.css">
+  <style>
+    * {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Bat Ball Stump Game</h1>
+  <button onclick="checkAnswer('Bat');">Bat</button>
+  <button onclick="checkAnswer('Ball');">Ball</button>
+  <button onclick="checkAnswer('Stump');">Stump</button>
+
+  <br>
+  <button onclick="
+  localStorage.clear();
+  resetScore();
+  ">Reset </button>
+
+  <script>
+
+    let scoreStr = localStorage.getItem('score');
+    let score;
+    resetScore(scoreStr);
+
+    function resetScore(scoreStr) {
+      score = scoreStr ? JSON.parse(scoreStr) : {
+        win: 0,
+        lost: 0,
+        tie: 0,
+      }
+    }
+
+
+    score.displayScore = function () {
+      return `Win: ${score.win} | Lost: ${score.lost} | Tie: ${score.tie}`;
+    }
+
+    // Get computer choice randomly 
+    function computerChoiceFunc() {
+      randomNumber = Math.random() * 3;
+      if (randomNumber > 0 && randomNumber <= 1) {
+        return 'Bat';
+      } else if (randomNumber >= 1 && randomNumber < 2) {
+        return 'Ball';
+      } else {
+        return 'Stump';
+      }
+    }
+
+    // checks who is the winner computer or user 
+    function getResult(userMove, ComputerMove) {
+      if (userMove == ComputerMove) {
+        score.tie++;
+        return 'It\'s a draw!';
+      } else if ((userMove == 'Bat' && ComputerMove == "Ball") || (userMove == "Ball" && ComputerMove == "Stump") || (userMove == "Stump" && ComputerMove == "Bat")) {
+        score.win++
+        return 'Hurray! You Won'
+      } else {
+        score.lost++
+        return 'The computer has won!'
+      }
+    }
+
+    // Alert the result in  an alert box
+    function showResult(yourChoice, computerChoice, resultMsg) {
+      localStorage.setItem('score', JSON.stringify(score))
+      alert(`You chose ${yourChoice}, Computer Choose ${computerChoice},
+
+      ${resultMsg} 
+      
+      Win: ${score.win} | Lost: ${score.lost} | Tie: ${score.tie}
+        `);
+    }
+
+    // combined all the  above functions into one to make it more interactive
+    function checkAnswer(yourChoice) {
+      computerChoice = computerChoiceFunc()
+      resultMsg = getResult(yourChoice, computerChoice)
+      showResult(yourChoice, computerChoice, resultMsg)
+    }
+
+  </script>
+
+</body>
+
+</html>

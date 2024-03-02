@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Object Practice Set</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+  <script>
+    let product = {
+      size: "5",
+      name: "jeans",
+      fit: "slim fit",
+      'deliver-time': "2 weeks",
+    };
+
+    let copyProduct = product;
+
+    console.log(copyProduct); // {size:"5",name:"jeans",fit:"slim fit"}
+    console.log(product); // {size:"5",name:"jeans",fit:"slim fit"}
+    product.color = "blue";
+
+    console.log(product['deliver-time']);
+
+    let obje = {
+      message: "good job",
+      status: "complete",
+    };
+
+    console.log(obje);
+    let { message, status } = obje
+    console.log(message);
+    console.log(status);
+
+
+    function isIdenticalProduct(product1, product2) {
+      if (typeof product1 !== "object" || typeof product2 !== "object") {
+        console.warn("parameters should be identical");
+        return false;
+      } else if (product1 == product2) {
+        return true
+      }
+      if (product1.name === product2.name &&
+        product1.size === product2.size &&
+        product1.fit === product2.fit
+      ) {
+        return true
+      } else {
+        return false
+      }
+    }
+
+    let product1 = {
+      size: "5",
+      name: "jeans",
+      fit: "slim fit",
+      'deliver-time': "2 weeks",
+    };
+
+    let product2 = {
+      size: "7",
+      name: "jeans",
+      fit: "slim fit",
+      'deliver-time': "2 weeks",
+    };
+    let product3 = {
+      size: "5",
+      name: "jeans",
+      fit: "slim fit",
+      'deliver-time': "2 weeks",
+    };
+
+    isIdenticalProduct(product1, product2); //true
+
+    console.log(isIdenticalProduct(product1, ''));//false
+    console.log(isIdenticalProduct(product1, product2));//false
+    console.log(isIdenticalProduct(product1, product1));//true
+    console.log(isIdenticalProduct(product1, product3));//true
+
+  </script>
+</body>
+
+</html>

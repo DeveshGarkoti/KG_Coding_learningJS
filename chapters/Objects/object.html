@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+  <h1>Object</h1>
+
+
+  <script>
+
+    // let product = {
+    //       company: 'Mango',
+    //       price: 365,
+    //       item_name: 'T-shirt',
+    //     };
+
+    // console.log(product);
+    // console.log(typeof product); // object
+    // console.log(product.company);
+    // console.log(product.price);
+
+    // console.log(product[`item_name`]); // dynamic key
+    // product.item_name = "Sweatshirt";
+    // console.log(product[`item_name`]); // dynamic key
+    // product[`year`] = '2021'//adding new property to the object using dynamic key
+    // console.log(product);
+    // delete product.company
+    // console.log(product);
+
+    // let product = {
+    //   company: 'Mango',
+    //   price: 365,
+    //   item_name: 'T-shirt',
+    //   displayPrice: function () {
+    //     console.log(`The ${this.item_name} from Mango is priced at $${this.price}`);
+    //   }
+
+    // };
+
+    // product.displayPrice()
+
+    //    // Autoboxing
+
+    // console.log((Number('45') + Number('7')));
+    // console.log("devesh garkoti here".replaceAll('e', 't'));
+
+    // let a = 5;
+    // let b = a;
+    // console.log(`a= ${a} b=${b}`);
+    // a = 8;
+    // console.log(`a= ${a} b=${b}`);
+
+    // let x = { num: 5 }
+    // let y = x;
+    // console.log(`x = ${x.num}, y = ${y.num}`);
+    // x.num = 9;
+    // console.log(`x = ${x.num}, y = ${y.num}`);
+
+
+    // let c = { num: 5 }
+    // let d = new Object(c);
+    // console.log(`c = ${c.num}, d = ${d.num}`);
+    // c.num = 9;
+    // d.num = 11;
+    // console.log(`c = ${c.num}, d = ${d.num}`);
+
+
+    // object destructuring
+    // let product = {
+    //   company: 'Mango',
+    //   price: 365,
+    //   item_name: 'T-shirt',
+    // };
+
+    // let { company, price, item_name } = product;
+
+    // console.log(company);
+    // console.log(price);
+    // console.log(item_name);
+
+
+    let product1 = {
+      item_name: "Laptop",
+      category: "Electronics",
+      price: 2000,
+    }
+
+    console.log(product1);
+
+    let product2 = product1
+    console.log(product2);
+
+    product1.item_name = "Macbook Pro";
+    console.log(product1);
+    console.log(product2);
+
+    let product3 = { ...product1 };
+    console.log(product3);
+    product1.item_name = "iPhone 14";
+    console.log(product1);
+    console.log(product2);
+    console.log(product3);
+
+
+
+  </script>
+</body>
+
+</html>

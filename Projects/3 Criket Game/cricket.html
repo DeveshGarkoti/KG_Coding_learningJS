@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cricket Game</title>
+  <link rel="stylesheet" href="../../chapters/styles.css">
+  <style>
+    * {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Bat Ball Stump Game</h1>
+  <button onclick="
+  let yourChoice = 'Bat';
+  let computerChoice = computerChoiceFunc()
+  let resultMsg = getResult(yourChoice,computerChoice )
+  alertResult(yourChoice, computerChoice, resultMsg);
+  ">Bat</button>
+
+  <button onclick="
+   yourChoice = 'Ball';
+   computerChoice = computerChoiceFunc()
+   resultMsg = getResult(yourChoice,computerChoice )
+   alertResult(yourChoice, computerChoice, resultMsg)
+  ">Ball</button>
+
+  <button onclick="
+   yourChoice = 'Stump';
+   computerChoice = computerChoiceFunc()
+   resultMsg = getResult(yourChoice,computerChoice )
+   alertResult(yourChoice, computerChoice, resultMsg)
+  ">Stump</button>
+
+  <script>
+
+    function computerChoiceFunc() {
+
+      randomNumber = Math.random() * 3;
+      if (randomNumber > 0 && randomNumber <= 1) {
+        return 'Bat';
+      } else if (randomNumber >= 1 && randomNumber < 2) {
+        return 'Ball';
+      } else {
+        return 'Stump';
+      }
+    }
+
+    function getResult(userMove, ComputerMove) {
+      if (userMove === ComputerMove) {
+        return 'It\'s a draw!';
+      } else if ((userMove === 'Bat' && ComputerMove === "Ball") || (userMove === "Ball" && ComputerMove === "Stump") || (userMove === "Stump" && ComputerMove === "Bat")) {
+        return 'Hurray! You Won'
+      } else {
+        return 'The computer has won!'
+      }
+    }
+
+    function alertResult(yourChoice, computerChoice, resultMsg) {
+      alert(`You chose ${yourChoice}, Computer Choose ${computerChoice},  ${resultMsg}`)
+    }
+
+
+
+  </script>
+
+</body>
+
+</html>

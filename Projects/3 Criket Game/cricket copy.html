@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Cricket Game</title>
+  <link rel="stylesheet" href="../../chapters/styles.css">
+  <style>
+    * {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Bat Ball Stump Game</h1>
+  <button onclick="checkAnswer('Bat');">Bat</button>
+  <button onclick="checkAnswer('Ball');">Ball</button>
+  <button onclick="checkAnswer('Stump');">Stump</button>
+
+  <script>
+
+    // Get computer choice randomly 
+    function computerChoiceFunc() {
+      randomNumber = Math.random() * 3;
+      if (randomNumber > 0 && randomNumber <= 1) {
+        return 'Bat';
+      } else if (randomNumber >= 1 && randomNumber < 2) {
+        return 'Ball';
+      } else {
+        return 'Stump';
+      }
+    }
+
+    // checks who is the winner computer or user 
+    function getResult(userMove, ComputerMove) {
+      if (userMove == ComputerMove) {
+        return 'It\'s a draw!';
+      } else if ((userMove == 'Bat' && ComputerMove == "Ball") || (userMove == "Ball" && ComputerMove == "Stump") || (userMove == "Stump" && ComputerMove == "Bat")) {
+        return 'Hurray! You Won'
+      } else {
+        return 'The computer has won!'
+      }
+    }
+
+    // Alert the result in  an alert box
+    function alertResult(yourChoice, computerChoice, resultMsg) {
+      alert(`You chose ${yourChoice}, Computer Choose ${computerChoice},  ${resultMsg}`)
+    }
+
+    // combined all the  above functions into one to make it more interactive
+    function checkAnswer(yourChoice) {
+      computerChoice = computerChoiceFunc()
+      resultMsg = getResult(yourChoice, computerChoice)
+      alertResult(yourChoice, computerChoice, resultMsg)
+    }
+
+  </script>
+
+</body>
+
+</html>

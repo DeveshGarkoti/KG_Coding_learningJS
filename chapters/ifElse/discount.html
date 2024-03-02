@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+
+    button {
+      border-radius: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Discount percentage</h1>
+  Age:-<input type="number" id="age" name="age" min="1" max="120">
+  <br>
+  Gender:-
+  <select id="gender" name="gender">
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+  </select>
+  <br>
+  <button onclick="calculateDiscount()">Calculate</button><br><br>
+  <p id="discountPercentage"></p>
+
+  <script>
+
+    function calculateDiscount() {
+      let age = document.getElementById("age").value;
+      let gender = document.getElementById("gender").value;
+
+      // console.log(age, gender);
+      let discountPercentage = 0;
+
+      if (age <= 5) {
+        discountPercentage = 100;
+      } else if (gender === "female" || age <= 8) {
+        discountPercentage = 50;
+      } else if (age >= 65) {
+        discountPercentage = 30;
+      } else {
+        discountPercentage = 0;
+      }
+
+
+      document.querySelector('#discountPercentage').innerHTML = `Discount: ${discountPercentage}%`;
+    }
+  </script>
+</body>
+
+</html>

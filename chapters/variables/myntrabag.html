@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myntra Bag</title>
+
+    <style>
+        button {
+            background: #ff4b26;
+            border: none;
+            padding: 5px 20px;
+            border-radius: 20px;
+            text-transform: uppercase;
+
+        }
+
+        button:hover {
+            cursor: pointer;
+            opacity: 0.9;
+        }
+
+
+        .bg-green {
+            background-color: #73c9a9;
+        }
+
+        .bg-white {
+            background-color: white;
+        }
+
+        .border {
+            border: 0.5px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <button onclick="cardQuantity++; updateCard()" class="bg-green">Add to Bag</button>
+    <button onclick="cardQuantity--; updateCard()" class="border bg-white">Move to Wishlist</button>
+    <button onclick="cardQuantity += 2; updateCard()" class="bg-green">Add 1+1 sale item</button>
+
+    <h1 id="card-summary">Your Bag has 0 items</h1>
+
+    <script>
+        let cardQuantity = 0;
+        document.querySelector('#card-summary').innerText = `Your Bag has ${cardQuantity} items`
+
+        function updateCard() {
+            document.querySelector('#card-summary').innerText = `Your Bag has ${cardQuantity} items`
+        }
+    </script>
+
+</body>
+
+</html>

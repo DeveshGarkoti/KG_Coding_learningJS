@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Document</title>
+  <style>
+    #clickMe {
+      font-size: 25px;
+      min-width: 100px;
+      min-height: 100px;
+      padding: 10px 10px;
+      cursor: pointer;
+      border: none;
+      border-radius: 25px;
+    }
+
+    .js-odd {
+      background-color: aqua;
+    }
+
+    .js-even {
+      background-color: chartreuse;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="clickMe" onclick="showNumberOfTimesButtonClicked()">0</button>
+
+  <script>
+    let button = document.getElementById("clickMe");
+
+    let numberOfTimesClicked = parseInt(localStorage.getItem("numberOfTimesClicked")) || 0;
+
+    function showNumberOfTimesButtonClicked() {
+      numberOfTimesClicked += 1;
+      localStorage.setItem('numberOfTimesClicked', numberOfTimesClicked);
+      updateButton();
+    }
+
+    function updateButton() {
+      button.innerText = numberOfTimesClicked;
+
+      if (numberOfTimesClicked % 2 == 0) {
+        button.classList.add("js-even");
+        button.classList.remove("js-odd");
+      } else {
+        button.classList.add('js-odd');
+        button.classList.remove("js-even");
+      }
+    }
+
+    updateButton()
+
+
+  </script>
+</body>
+
+</html>

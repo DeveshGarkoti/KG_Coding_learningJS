@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>JSON</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+  JSON
+
+  <script>
+    let product = {
+      name: "t-shirt",
+      price: 45,
+      rating: {
+        stars: 4.5,
+        noOfReviews: 40,
+      },
+    }
+
+
+    console.log(typeof product);
+    console.log(product);
+
+    let str = JSON.stringify(product); // Convert object to string using JSON.stringify() method
+
+    console.log(typeof str);
+    console.log(str);
+
+    let newProduct = JSON.parse(str);
+    console.log(typeof newProduct);
+    console.log(newProduct);
+
+  </script>
+</body>
+
+</html>
