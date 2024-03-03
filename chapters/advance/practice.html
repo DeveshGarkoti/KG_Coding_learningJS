@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <button id="grow">Grow!</button>
+
+  <script>
+
+    // 1
+
+    let multiply = (num1, num2) => num1 * num2
+
+    let result1 = multiply(5, 3);
+
+    console.log(result1);
+
+    // 2
+
+    let runTwice = (num) => {
+      let call = setInterval(() => {
+        console.log(num);
+      }, 1000);
+
+      setTimeout(() => {
+        clearInterval(call);
+      }, 2000);
+    }
+
+    runTwice(4)
+
+    // 3, 4
+
+    let btnGrow = document.querySelector("#grow");
+
+    btnGrow.addEventListener('click', () => {
+      console.log('clicked');
+      setTimeout(() => {
+        if (btnGrow.style.fontSize == '2em') {
+          btnGrow.style.fontSize = '1em';
+        } else {
+          btnGrow.style.fontSize = '2em';
+        }
+
+      }, 2000)
+    })
+
+
+    // 5
+
+    let arr = [1, 2, 3];
+
+    let sum = 0;
+    arr.forEach((num) => {
+      sum += num;
+      console.log(num, sum);
+    })
+
+    // 6
+
+    let arr1 = [1, 2, 3, 4]
+
+    let square
+
+  </script>
+</body>
+
+</html>
