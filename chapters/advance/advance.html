@@ -10,39 +10,83 @@
 <body>
 
   <h1>Advanced Functions in Javascript</h1>
+  <button id="myButton">Click me!</button>
 
+
+  <!-- <script>
+    // Event Listener
+
+    let buttonElement = document.querySelector('#myButton');
+    let clickEvent = event => console.log('I clicked')
+    buttonElement.addEventListener('click', clickEvent);
+
+    let newEvent = event => console.log(new Date());
+
+    buttonElement.addEventListener('click', newEvent)
+
+    buttonElement.removeEventListener('click', clickEvent)
+  </script> -->
+
+  <!-- For Each
   <script>
-    let sum = function (n1, n2) {
-      return n1 + n2;
-    };
+    let fruits = ['apple', 'banana', 'orange'];
 
-    // let newSum = sum;
+    fruits.forEach((fr, index) => console.log(fr, index));
 
-    // console.log(sum(4, 5));
-    // console.log(newSum(4, 5));
+  </script> -->
 
+  <!-- <script>
+  let sum = function (n1, n2) {
+  return n1 + n2;
+  };
 
-    let sumThreeNumbers = function (n1, n2, n3, sumTwoNumbers) {
-      s1 = sumTwoNumbers(n1, n2);
-      return s1 + n3;
-    };
+  // let newSum = sum;
 
-    console.log(sumThreeNumbers(1, 5, 3, sum));
-
-    // Arrow Function
-
-    let sum1 = function (num1, num2) {
-      return num1 + num2;
-    }
-
-    let sum2 = (num1, num2) => {
-      return num1 + num2
-    }
-
-    let sum3 = (num1, num2) => num1 + num2;
+  // console.log(sum(4, 5));
+  // console.log(newSum(4, 5));
 
 
-  </script>
+  let sumThreeNumbers = function (n1, n2, n3, sumTwoNumbers) {
+  s1 = sumTwoNumbers(n1, n2);
+  return s1 + n3;
+  };
+
+  // console.log(sumThreeNumbers(1, 5, 3, sum));
+
+  // Arrow Function
+
+  let sum1 = function (num1, num2) {
+  return num1 + num2;
+  }
+
+  let sum2 = (num1, num2) => {
+  return num1 + num2
+  }
+
+  let sum3 = (num1, num2) => num1 + num2;
+
+  // SetTimeout
+
+  let alarm = function (word = "you") {
+  console.log('Alarm! ' + new Date());
+  }
+
+  // let timerId = setTimeout(alarm, 1000);
+  // console.log('Timer ID: ', timerId);
+
+  // clearTimeout(timerId);
+
+  // setInterval
+
+  let intervalId = setInterval(alarm, 1000);
+
+  setTimeout(() => {
+  clearInterval(intervalId)
+  }, 5000);
+
+  </script> -->
+
+
 </body>
 
 </html>
